@@ -1,0 +1,131 @@
+<div
+  style="
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+  "
+>
+  <form [formGroup]="loginForm" (ngSubmit)="submit()">
+    <div class="input-container">
+      <input
+      [class.error-input]="(loginForm.get('email')?.invalid || 
+      (loginForm.get('email')?.hasError('pattern') || 
+      loginForm.get('email')?.hasError('email'))) && 
+      ((loginForm.get('email')?.dirty || loginForm.get('email')?.touched))"
+        type="text"
+        id="email"
+        class="floating-input"
+        placeholder="Enter your email"
+        formControlName="email"
+        required
+      />
+      <label for="email" class="floating-label" style="display: flex; align-items: center; gap: 5px">
+        <svg
+          _ngcontent-c20=""
+          class="icon icon-tabler icon-tabler-mail ng-tns-c20-19"
+          fill="none"
+          height="20"
+          stroke="#3DADFF"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path _ngcontent-c20="" class="ng-tns-c20-19" d="M0 0h24v24H0z" fill="none" stroke="none"></path>
+          <path _ngcontent-c20="" class="ng-tns-c20-19" d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"></path>
+          <path _ngcontent-c20="" class="ng-tns-c20-19" d="M3 7l9 6l9 -6"></path>
+        </svg>
+        Your Email <span class="req-star">*</span>
+      </label>
+      <div class="error-message" [class.show]="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)">
+        <small *ngIf="loginForm.get('email')?.errors?.['required']">Email is required.</small>
+        <small *ngIf="loginForm.get('email')?.errors?.['pattern'] || loginForm.get('email')?.errors?.['email']">
+          Invalid email format.
+        </small>
+      </div>
+    </div>
+    <div class="input-container">
+      <input
+        [type]="showPass ? 'text' : 'password'"
+        id="password"
+        [class.error-input]="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)"
+        class="floating-input"
+        placeholder="Enter your password"
+        formControlName="password"
+        required
+      />
+      <div style="position: absolute; right: 0px; top: 20px">
+        <button *ngIf="!showPass" (click)="toggleShowPass()" type="button" class="toggle-password-button">
+          <svg
+            _ngcontent-c45=""
+            style="cursor: pointer"
+            class="icon icon-tabler icon-tabler-eye"
+            fill="none"
+            height="20"
+            stroke="#A5A2AD"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+            viewBox="0 0 24 24"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path _ngcontent-c45="" class="ng-tns-c45-14" d="M0 0h24v24H0z" fill="none" stroke="none"></path>
+            <path _ngcontent-c45="" class="ng-tns-c45-14" d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+            <path _ngcontent-c45="" class="ng-tns-c45-14" d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"></path>
+          </svg>
+        </button>
+        <button *ngIf="showPass" (click)="toggleShowPass()" type="button" class="toggle-password-button" >
+          <svg
+            _ngcontent-c45=""
+            style="cursor: pointer"
+            class="icon icon-tabler icon-tabler-eye-off"
+            fill="none"
+            height="20"
+            stroke="#A5A2AD"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1.5"
+            viewBox="0 0 24 24"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path _ngcontent-c45="" class="ng-tns-c45-14" d="M0 0h24v24H0z" fill="none" stroke="none"></path>
+            <path _ngcontent-c45="" class="ng-tns-c45-14" d="M10.585 10.587a2 2 0 0 0 2.829 2.828"></path>
+            <path _ngcontent-c45="" class="ng-tns-c45-14" d="M16.681 16.673a8.717 8.717 0 0 1 -4.681 1.327c-3.6 0 -6.6 -2 -9 -6c1.272 -2.12 2.712 -3.678 4.32 -4.674m2.86 -1.146a9.055 9.055 0 0 1 1.82 -.18c3.6 0 6.6 2 9 6c-.666 1.11 -1.379 2.067 -2.138 2.87"></path>
+            <path _ngcontent-c45="" class="ng-tns-c45-14" d="M3 3l18 18"></path>
+          </svg>
+        </button>
+      </div>
+      <label for="password" class="floating-label" style="display: flex; align-items: center; gap: 5px">
+        <svg
+          _ngcontent-c20=""
+          class="icon icon-tabler icon-tabler-lock ng-tns-c20-19"
+          fill="none"
+          height="20"
+          stroke="#3DADFF"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path _ngcontent-c20="" class="ng-tns-c20-19" d="M0 0h24v24H0z" fill="none" stroke="none"></path>
+          <path _ngcontent-c20="" class="ng-tns-c20-19" d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6z"></path>
+          <path _ngcontent-c20="" class="ng-tns-c20-19" d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0"></path>
+          <path _ngcontent-c20="" class="ng-tns-c20-19" d="M8 11v-4a4 4 0 1 1 8 0v4"></path>
+        </svg>
+        Your Password <span class="req-star">*</span>
+      </label>
+      <div class="error-message"  [class.show]="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">
+        <small *ngIf="loginForm.get('password')?.errors?.['required']">Password is required.</small>
+      </div>
+    </div>
+    <button type="submit">Sign in</button>
+  </form>
+</div>

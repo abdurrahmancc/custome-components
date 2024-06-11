@@ -1,0 +1,108 @@
+form {
+    max-width: 400px;
+    width: 100%;
+  }
+  .input-container {
+    position: relative;
+    margin: 25px 0;
+  }
+  
+  .floating-input {
+    font-size: 16px;
+    padding: 18px 0px 18px 22px;
+    display: block;
+    width: 100%;
+    color: #333333;
+    border: 1px solid #4b465c29;
+    border-radius: 30px;
+    background: transparent;
+    outline: none;
+    transition: all 0.2s ease;
+  }
+  
+  .floating-input::placeholder {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  
+  .floating-label svg {
+    transition: width 0.2s ease;
+  }
+  
+  .floating-input:focus::placeholder {
+    opacity: 1;
+    color: #a5a2ad;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  
+  .floating-input:focus {
+    border: 1px solid #0d99ff66;
+    border-radius: 30px;
+  }
+  
+  .floating-input:focus ~ .floating-label,
+  .floating-input:not(:placeholder-shown) ~ .floating-label {
+    top: -7px;
+    font-size: 12px;
+    color: #4d5156;
+  }
+  .floating-input:focus ~ .floating-label svg,
+  .floating-input:not(:placeholder-shown) ~ .floating-label svg {
+    width: 15px;
+  }
+  
+  .floating-input:focus ~ .floating-label .req-star {
+    color: #ea5455;
+  }
+  
+  .floating-label {
+    color: #999;
+    font-size: 16px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 15px;
+    top: 20px;
+    transition: all 0.2s ease;
+    background: white;
+    padding: 0 5px;
+  }
+  
+  .error-message {
+    position: absolute;
+    margin-left: 20px;
+    top: 48px;
+    opacity: 0;
+    transition: top 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .error-message.show {
+    top: 56px;
+    opacity: 1;
+  }
+  
+  small {
+    color: #ea5455;
+    display: block;
+    margin-top: 5px;
+  }
+  
+  .error-input {
+    border-color: #ea5455 !important;
+  }
+  
+  .error-input ~ .floating-label {
+    color: #ea5455 !important;
+  }
+  .error-input ~ .floating-label svg {
+    stroke: #ea5455 !important;
+  }
+
+
+  .toggle-password-button{
+    border: none;
+    background: none;
+    outline:  none;
+  }
+  
