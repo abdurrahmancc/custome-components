@@ -1,0 +1,51 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #fff;
+}
+
+.input-container {
+    position: relative;
+    margin: 20px 0;
+}
+
+.floating-input {
+    font-size: 16px;
+    padding: 10px 10px 10px 18px;
+    display: block;
+    width: 300px;
+    border: 1px solid #757575;
+    border-radius: 20px;
+    background: transparent;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.floating-input:focus {
+    border: 1px solid #5264ae;
+    border-radius: 20px; 
+}
+
+.floating-input:focus ~ .floating-label,
+.floating-input:not(:placeholder-shown) ~ .floating-label {
+    top: -7px;
+    font-size: 12px;
+    color: #5264ae;
+}
+
+.floating-label {
+    color: #999;
+    font-size: 16px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 15px;
+    top: 10px;
+    transition: all 0.2s ease;
+    background: white;
+    padding: 0 5px;
+}
