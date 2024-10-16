@@ -99,24 +99,24 @@ document.addEventListener('DOMContentLoaded', function () {
     // Function to set error message
     function setError(element, message) {
         const parentElement = element.parentElement;
-        let errorElement = parentElement.querySelector('.custom_error_message');
+        let errorElement = parentElement.querySelector('.floating_custom_error_message');
 
         if (!errorElement) {
             errorElement = document.createElement('span');
-            errorElement.className = 'custom_error_message';
+            errorElement.className = 'floating_custom_error_message';
             parentElement.appendChild(errorElement);
         }
         errorElement.innerText = message;
-        element.classList.add('custom_error');
+        element.classList.add('floating_custom_error');
     }
 
     // Function to clear error message
     function clearError(element) {
-        const errorElement = element.parentElement.querySelector('.custom_error_message');
+        const errorElement = element.parentElement.querySelector('.floating_custom_error_message');
         if (errorElement) {
             errorElement.remove();
         }
-        element.classList.remove('custom_error');
+        element.classList.remove('floating_custom_error');
     }
 
     // Function to validate email format

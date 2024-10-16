@@ -9,11 +9,11 @@ body {
 }
 
 
-.custom_error {
+.floating_custom_error {
     border-color: red; /* Error state color */
 }
 
-.custom_error_message {
+.floating_custom_error_message {
     color: red; /* Error message color */
     font-size: 12px;
     position: absolute;

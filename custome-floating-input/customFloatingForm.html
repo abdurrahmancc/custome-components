@@ -4,13 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="customCloatingForm.css">
+    <link rel="stylesheet" href="customFloatingForm.css">
 </head>
 <body>
 
 
     <form id="signIn_form" novalidate style="max-width: 495px;" class="custom_signup_form_parent">
         <div class="" style="width: 100%;">
+            <div class="custom_input_container ">
+                <input type="text" id="custom_fullName" class="custom_floating_input_field" placeholder="Enter Your Full Name" required>
+                <label for="custom_fullName" class="custom_floating_label">
+                    <div class="custom_floating_label_dev">
+                       Full Name
+                    </div>
+                </label>
+            </div>
             <div class="custom_input_container ">
                 <input type="text" id="custom_login_Email" class="custom_floating_input_field" placeholder="Enter Your Email" required>
                 <label for="custom_login_Email" class="custom_floating_label">
@@ -48,6 +56,6 @@
         </div>
     </form>
 
-    <script src="customCloatingForm.js"></script>
+    <script src="customFloatingForm.js"></script>
 </body>
 </html>
