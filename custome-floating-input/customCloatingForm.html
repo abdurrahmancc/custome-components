@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="customCloatingForm.css">
+</head>
+<body>
+
+
+    <form id="signIn_form" novalidate style="max-width: 495px;" class="custom_signup_form_parent">
+        <div class="" style="width: 100%;">
+            <div class="custom_input_container ">
+                <input type="text" id="custom_login_Email" class="custom_floating_input_field" placeholder="Enter Your Email" required>
+                <label for="custom_login_Email" class="custom_floating_label">
+                    <div class="custom_floating_label_dev">
+                        <svg  xmlns="http://www.w3.org/2000/svg" style="position: relative; top: -1px;"  width="20"  height="20"  viewBox="0 0 24 24"  fill="none"  stroke="#999"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-mail"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg> Email Address <span class="required-mark">*</span>
+                    </div>
+                </label>
+            </div>
+            <div class="custom_input_container">
+                <input type="password" id="custom_login_Password" class="custom_floating_input_field" placeholder="Enter Your Password" required>
+                <label for="custom_login_Password" class="custom_floating_label">
+                    <div class="custom_floating_label_dev">
+                        <svg  xmlns="http://www.w3.org/2000/svg" style="position: relative; top: -1px;"  width="20"  height="20"  viewBox="0 0 24 24"  fill="none"  stroke="#999"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-lock"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6z" /><path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /><path d="M8 11v-4a4 4 0 1 1 8 0v4" /></svg>Password <span class="required-mark">*</span>
+                    </div>
+                </label>
+            </div>
+    
+            <div class="custom_forgot_password">
+                Forgot password?
+            </div>
+    
+            <div class="w-full">
+                <button type="submit" id="custom_login_btn_submit" class="custom_submit_button">
+                    Sign-In
+                </button>
+                <button id="custom_loginIn_loading" disabled class=" custom_submit_button " >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" aria-live="polite">
+                        <path fill="currentColor" d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,19a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z" opacity="0.25" />
+                        <path fill="currentColor" d="M10.72,19.9a8,8,0,0,1-6.5-9.79A7.77,7.77,0,0,1,10.4,4.16a8,8,0,0,1,9.49,6.52A1.54,1.54,0,0,0,21.38,12h.13a1.37,1.37,0,0,0,1.38-1.54,11,11,0,1,0-12.7,12.39A1.54,1.54,0,0,0,12,21.34h0A1.47,1.47,0,0,0,10.72,19.9Z">
+                            <animateTransform attributeName="transform" dur="0.75s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12" />
+                        </path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </form>
+
+    <script src="customCloatingForm.js"></script>
+</body>
+</html>
